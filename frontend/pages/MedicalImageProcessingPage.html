@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Image Processing & Medical Records · UHID</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/global.css">
+<link rel="stylesheet" href="../styles/image-viewer.css">
+<link rel="stylesheet" href="../styles/medical-records.css">
+<link rel="stylesheet" href="../styles/professional.css">
+<link rel="stylesheet" href="../styles/register.css">
+<link rel="stylesheet" href="../styles/security.css">
+</head>
+<body>
+<div class="app">
+<aside class="side"><div class="brand"><span class="brand-mark">U</span>UHID</div>
+  <nav>
+    <a href="PatientDashboard.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>Overview</a>
+    <a href="PatientDashboard.html#card"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10h2"/><path d="M16 14h2"/><path d="M6.17 15a3 3 0 0 1 5.66 0"/><circle cx="9" cy="11" r="2"/><rect x="2" y="5" width="20" height="14" rx="2"/></svg>UHID card</a>
+    <a href="PatientDashboard.html#access"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Manage access</a>
+    <a href="MedicalRecordsPage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Medical records</a>
+    <a href="MedicalHistoryPage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>Medical history</a>
+    <a href="ConsultationsPage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>Consultations</a>
+    <a href="PrescriptionsPage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>Prescriptions</a>
+    <a href="AuthorizedProfessionalsPage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Authorized professionals</a>
+    <a href="AccessHistoryPage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>Access history</a>
+    <a href="MedicalImageProcessingPage.html" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>Image processing</a>
+    <a href="ProfilePage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>My profile</a>
+    <a href="NotificationsPage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>Notifications</a>
+    <a href="SecuritySettingsPage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>Security settings</a>
+  </nav>
+  <div class="side-foot">
+    <div class="who"><b id="patientSidebarName">Loading...</b><span>patient</span></div>
+    <a class="btn ghost-dark" href="LandingPage.html" id="logoutBtn"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>Log out</a>
+  </div>
+</aside>
+
+<main id="top">
+<h1 class="page-t" id="welcomeHeading">Welcome</h1>
+
+<!-- Upload Medical Record Card -->
+<section class="card">
+  <h2>Upload Medical Record / Image</h2>
+  <p><small>Upload lab reports, prescriptions, or medical scans securely to your UHID profile.</small></p>
+  
+  <form id="uploadRecordForm" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px;">
+    <div>
+      <label for="recordType" style="display: block; margin-bottom: 6px; font-weight: 500;">Record Type</label>
+      <input type="text" id="recordType" placeholder="e.g. X-Ray, Blood Test, MRI Scan" required style="width: 100%; padding: 8px;">
+    </div>
+    
+    <div>
+      <label for="recordDesc" style="display: block; margin-bottom: 6px; font-weight: 500;">Description (Optional)</label>
+      <textarea id="recordDesc" placeholder="Brief notes or symptoms..." style="width: 100%; padding: 8px;"></textarea>
+    </div>
+
+    <div>
+      <label for="recordFile" style="display: block; margin-bottom: 6px; font-weight: 500;">Select Document / Image File</label>
+      <input type="file" id="recordFile" required style="width: 100%;">
+    </div>
+
+    <button type="submit" class="btn" id="uploadBtn" style="align-self: flex-start; padding: 10px 20px;">Upload Document</button>
+  </form>
+  <div id="uploadResult" style="margin-top: 12px;"></div>
+</section>
+
+<!-- Dynamic Uploaded Files Table Section -->
+<section class="card">
+  <h2>My Uploaded Records</h2>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Record Type</th>
+          <th>Description</th>
+          <th>Date Uploaded</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="dynamicRecordsTable">
+        <tr>
+          <td colspan="4" style="text-align: center; color: #666;">Loading your records...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<p class="note">UHID Secure Patient Portal · Authorized Records Management.</p>
+</main>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+    const token = sessionStorage.getItem("uhid_token");
+    if (!token) {
+        window.location.href = "LoginPage.html";
+        return;
+    }
+
+    // 1. Fetch live patient profile to populate name dynamically
+    try {
+        const profileRes = await fetch("/api/patients/profile", {
+            method: "GET",
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+        const profileData = await profileRes.json();
+        
+        if (profileRes.ok && profileData.name) {
+            document.getElementById("welcomeHeading").textContent = `Welcome, ${profileData.name}`;
+            document.getElementById("patientSidebarName").textContent = profileData.name;
+        } else {
+            document.getElementById("welcomeHeading").textContent = `Welcome, Patient`;
+            document.getElementById("patientSidebarName").textContent = "Patient";
+        }
+    } catch (err) {
+        console.error("Failed to load profile:", err);
+    }
+
+    // 2. Fetch and render live medical records table with Download option
+    async function loadPatientRecords() {
+        const tableBody = document.getElementById("dynamicRecordsTable");
+        try {
+            const recordsRes = await fetch(`/api/patients/my-records`, {
+                headers: { "Authorization": `Bearer ${token}` }
+            });
+            const recordsData = await recordsRes.json();
+
+            if (recordsRes.ok && recordsData.success && recordsData.records.length > 0) {
+                tableBody.innerHTML = recordsData.records.map(rec => {
+                    const filename = rec.document_path ? rec.document_path.split('\\').pop().split('/').pop() : 'document';
+                    return `
+                        <tr>
+                            <td><strong>${rec.record_type}</strong></td>
+                            <td>${rec.description || 'N/A'}</td>
+                            <td>${rec.created_at}</td>
+                            <td>${rec.document_path ? `<a class="btn" href="/${rec.document_path}" download="${filename}" style="padding: 4px 10px; font-size: 12px; text-decoration: none;">Download File</a>` : 'No file'}</td>
+                        </tr>
+                    `;
+                }).join('');
+            } else {
+                tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #666;">No medical records uploaded yet.</td></tr>`;
+            }
+        } catch (error) {
+            console.error("Error loading records table:", error);
+            tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #dc2626;">Failed to load records.</td></tr>`;
+        }
+    }
+
+    loadPatientRecords();
+
+    // 3. Handle File Upload Form Submission
+    const uploadForm = document.getElementById("uploadRecordForm");
+    if (uploadForm) {
+        uploadForm.addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const resultDiv = document.getElementById("uploadResult");
+            const uploadBtn = document.getElementById("uploadBtn");
+
+            const recordType = document.getElementById("recordType").value.trim();
+            const description = document.getElementById("recordDesc").value.trim();
+            const fileInput = document.getElementById("recordFile").files[0];
+
+            if (!fileInput) {
+                alert("Please select a file to upload.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("file", fileInput);
+            formData.append("record_type", recordType);
+            formData.append("description", description);
+
+            if (uploadBtn) {
+                uploadBtn.disabled = true;
+                uploadBtn.textContent = "Uploading...";
+            }
+            if (resultDiv) {
+                resultDiv.innerHTML = `<p style="color: #666;">Uploading document and saving record...</p>`;
+            }
+
+            try {
+                const response = await fetch("/api/patients/upload-record", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    if (resultDiv) {
+                        resultDiv.innerHTML = `<p style="color: var(--teal, #0d9488); font-weight: 600;">${data.message}</p>`;
+                    }
+                    uploadForm.reset();
+                    loadPatientRecords(); // Automatically refresh the table to show the new upload!
+                } else {
+                    if (resultDiv) {
+                        resultDiv.innerHTML = `<p style="color: #dc2626;">Error: ${data.message || "Upload failed"}</p>`;
+                    }
+                }
+            } catch (error) {
+                console.error("Upload error:", error);
+                if (resultDiv) {
+                    resultDiv.innerHTML = `<p style="color: #dc2626;">Network error occurred during upload.</p>`;
+                }
+            } finally {
+                if (uploadBtn) {
+                    uploadBtn.disabled = false;
+                    uploadBtn.textContent = "Upload Document";
+                }
+            }
+        });
+    }
+
+    // Handle Logout
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            sessionStorage.clear();
+            window.location.href = "LandingPage.html";
+        });
+    }
+});
+</script>
+</body>
+</html>

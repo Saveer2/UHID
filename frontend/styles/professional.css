@@ -1,0 +1,2 @@
+.reg-pro{max-width:760px;margin:5vh auto;padding:0 16px}.reg-pro h1{margin-bottom:6px}.fld{display:flex;flex-direction:column;font-weight:600;font-size:14px;flex:1 1 220px;margin:0}.fld input,.fld select{margin:4px 0}.fld .err{font-size:13px;font-weight:600}
+.reg-pro .grid{display:flex;flex-wrap:wrap;gap:10px 14px}.ro{background:var(--bg)}

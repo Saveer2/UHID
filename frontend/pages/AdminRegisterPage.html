@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin registration · UHID</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/global.css">
+<link rel="stylesheet" href="../styles/register.css">
+</head>
+<body>
+<div class="reg-pro" style="padding: 24px max(24px, 4vw); max-width: 600px; margin: 0 auto;">
+<a href="LoginPage.html" class="register-back" style="display:inline-block; margin-bottom: 20px;">← Back to login</a>
+<form class="card" onsubmit="handleAdminRegister(event)">
+<h1>Admin registration</h1>
+<p class="banner">System administrator portal registration. Requires an authorization security key.</p>
+
+<div class="register-grid" style="display:grid; grid-template-columns:1fr; gap:16px;">
+<label class="register-field">Full name<input type="text" id="name" required autocomplete="off" placeholder="System Administrator"></label>
+<label class="register-field">Email<input type="email" id="email" required autocomplete="off" placeholder="admin@uhid.system"></label>
+<label class="register-field">Password<input type="password" id="password" required autocomplete="off" minlength="8" placeholder="At least 8 characters"></label>
+<label class="register-field">Confirm password<input type="password" id="confirm_password" required autocomplete="off" minlength="8" placeholder="Re-enter password"></label>
+<label class="register-field">Admin Security Key<input type="password" id="admin_key" required autocomplete="off" placeholder="Enter system security key"></label>
+</div>
+
+<button class="lg btn" style="margin-top:24px; width:100%; justify-content:center;" type="submit">Create Admin Account</button>
+</form>
+</div>
+<script src="../js/auth.js"></script>
+</body>
+</html>

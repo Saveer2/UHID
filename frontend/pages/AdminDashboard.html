@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Portal · UHID</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/global.css">
+<link rel="stylesheet" href="../styles/register.css">
+</head>
+<body>
+<div class="app" style="display: flex; min-height: 100vh;">
+<aside class="side" style="width: 260px; background: #0f172a; color: #fff; padding: 24px;">
+  <div class="brand" style="font-size: 20px; font-weight: 800; margin-bottom: 30px;"><span class="brand-mark" style="color: var(--teal);">U</span>UHID Admin</div>
+  <nav style="display: flex; flex-direction: column; gap: 12px;">
+    <a href="AdminDashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">System Overview</a>
+    <a href="LoginPage.html" id="logoutBtn" style="color: #94a3b8; text-decoration: none; margin-top: auto;">Log out</a>
+  </nav>
+</aside>
+
+<main style="flex: 1; padding: 32px; background: #f8fafc;">
+  <h1 style="margin-bottom: 24px;">Admin Control Center</h1>
+
+  <!-- Stats Cards -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px;">
+    <div class="card" style="padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <div style="color: #64748b; font-size: 14px;">Total Users</div>
+      <div id="statTotalUsers" style="font-size: 28px; font-weight: 800; margin-top: 8px;">0</div>
+    </div>
+    <div class="card" style="padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <div style="color: #64748b; font-size: 14px;">Registered Doctors</div>
+      <div id="statDoctors" style="font-size: 28px; font-weight: 800; margin-top: 8px;">0</div>
+    </div>
+    <div class="card" style="padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <div style="color: #64748b; font-size: 14px;">Registered Patients</div>
+      <div id="statPatients" style="font-size: 28px; font-weight: 800; margin-top: 8px;">0</div>
+    </div>
+  </div>
+
+  <!-- Users Directory Table -->
+  <div class="card" style="background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    <h2>System Users Directory</h2>
+    <div style="overflow-x: auto; margin-top: 16px;">
+      <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead>
+          <tr style="border-bottom: 2px solid #e2e8f0; color: #64748b; font-size: 13px;">
+            <th style="padding: 12px;">ID</th>
+            <th style="padding: 12px;">Name</th>
+            <th style="padding: 12px;">Email</th>
+            <th style="padding: 12px;">Role</th>
+            <th style="padding: 12px;">Joined</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+          <tr><td colspan="5" style="padding: 16px; text-align: center; color: #64748b;">Loading system records...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+    const token = sessionStorage.getItem("uhid_token");
+    if (!token) {
+        window.location.href = "LoginPage.html";
+        return;
+    }
+
+    try {
+        const response = await fetch("/api/admin/users", {
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+        const data = await response.json();
+
+        if (!response.ok) throw new Error(data.message || "Failed to fetch admin records");
+
+        // Update stats
+        document.getElementById("statTotalUsers").textContent = data.users.length;
+        document.getElementById("statDoctors").textContent = data.doctors.length;
+        document.getElementById("statPatients").textContent = data.patients.length;
+
+        // Populate Table
+        const tbody = document.getElementById("userTableBody");
+        tbody.innerHTML = "";
+
+        data.users.forEach(u => {
+            const tr = document.createElement("tr");
+            tr.style.borderBottom = "1px solid #f1f5f9";
+            tr.innerHTML = `
+                <td style="padding: 12px;">#${u.user_id}</td>
+                <td style="padding: 12px; font-weight: 600;">${u.name}</td>
+                <td style="padding: 12px; color: #64748b;">${u.email}</td>
+                <td style="padding: 12px;"><span style="padding: 4px 8px; border-radius: 4px; font-size: 12px; background: ${u.role === 'admin' ? '#fee2e2' : u.role === 'doctor' ? '#e0f2fe' : '#f0fdf4'}; color: ${u.role === 'admin' ? '#991b1b' : u.role === 'doctor' ? '#0369a1' : '#15803d'};">${u.role}</span></td>
+                <td style="padding: 12px; color: #64748b; font-size: 13px;">${new Date(u.created_at).toLocaleDateString()}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+    } catch (err) {
+        console.error(err);
+        document.getElementById("userTableBody").innerHTML = `<tr><td colspan="5" style="padding: 16px; text-align: center; color: #ef4444;">Error loading records: ${err.message}</td></tr>`;
+    }
+
+    // Logout handler
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+        sessionStorage.clear();
+    });
+});
+</script>
+</body>
+</html>

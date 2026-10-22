@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Log in · UHID</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/global.css">
+<link rel="stylesheet" href="../styles/image-viewer.css">
+<link rel="stylesheet" href="../styles/medical-records.css">
+<link rel="stylesheet" href="../styles/professional.css">
+<link rel="stylesheet" href="../styles/register.css">
+<link rel="stylesheet" href="../styles/security.css">
+</head>
+<body>
+<div class="login">
+ <div class="login-art">
+  <a href="LandingPage.html" class="brand"><span class="brand-mark">U</span>UHID</a>
+  <h2>Your health identity, in your hands.</h2>
+  <p>Use a demo account or <a href="PatientRegisterPage.html">create a patient UHID</a>.</p>
+  <a class="btn demo" href="#login-form" data-demo-email="asha@demo.uhid" data-demo-password="patient123" data-demo-role="patient">Patient demo<span>asha@demo.uhid · patient123</span></a>
+  <a class="btn demo" href="#login-form" data-demo-email="rahul@demo.uhid" data-demo-password="doctor123" data-demo-role="doctor">Verified doctor<span>rahul@demo.uhid · doctor123</span></a>
+  <a class="btn demo" href="#login-form" data-demo-email="meera@demo.uhid" data-demo-password="doctor123" data-demo-role="doctor">Pending doctor<span>meera@demo.uhid · doctor123</span></a>
+  <a class="btn demo" href="#login-form" data-demo-email="kiran@demo.uhid" data-demo-password="kiran12345" data-demo-role="lab_technician">Lab technician<span>kiran@demo.uhid · kiran12345</span></a>
+ </div>
+ <form class="login-form" id="login-form" onsubmit="handleLogin(event)">
+  <h1>Log in</h1>
+  <label>Role
+   <select name="role" id="login-role">
+    <option value="patient">Patient</option>
+    <option value="doctor">Doctor</option>
+    <option value="lab_technician">Admin</option>
+   </select>
+  </label>
+  <label>Email
+   <input name="email" type="email" autocomplete="username" required value="asha@demo.uhid">
+  </label>
+  <label>Password
+   <input name="password" type="password" autocomplete="current-password" required value="patient123">
+  </label>
+  <p id="login-message" role="alert" aria-live="polite"></p>
+  <button class="lg" type="submit">Log in</button>
+
+  <!-- Hardware RFID & PIN Login Section -->
+  <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
+    <h3 style="font-size: 15px; margin-bottom: 6px; color: #0b2239;">Hardware RFID &amp; PIN Login</h3>
+    <p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">Touch your ESP32 sensor, tap your card, and enter your PIN.</p>
+    <button type="button" class="btn ghost" id="hardwareListenBtn" onclick="toggleHardwareLogin()" style="width: 100%;">Listen for Hardware Scan</button>
+    <p id="hardwareStatus" style="font-size: 12px; margin-top: 8px; font-weight: 600; color: #0369a1; text-align: center;"></p>
+  </div>
+
+  <small style="display: block; margin-top: 16px;">Log in using an account registered in the UHID database. Demo credentials work only if those accounts exist in the database.</small>
+  <p>New to UHID? <a href="PatientRegisterPage.html">Create patient profile</a></p>
+  <p>Healthcare professional? <a href="DoctorRegisterPage.html">Register as doctor</a> · <a href="AdminRegisterPage.html">Register as Admin</a></p>
+ </form>
+</div>
+
+<script src="/frontend/js/auth.js"></script>
+
+</body>
+</html>

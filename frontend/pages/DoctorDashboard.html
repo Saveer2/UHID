@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doctor Dashboard · UHID</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/global.css">
+<link rel="stylesheet" href="../styles/image-viewer.css">
+<link rel="stylesheet" href="../styles/medical-records.css">
+<link rel="stylesheet" href="../styles/professional.css">
+<link rel="stylesheet" href="../styles/register.css">
+<link rel="stylesheet" href="../styles/security.css">
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand"><span class="brand-mark">U</span>UHID Doctor</div>
+  <nav>
+    <a href="DoctorDashboard.html" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>Overview</a>
+    <a href="#lookup"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Patient Lookup</a>
+    <a href="#consultations"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>Consultations</a>
+    <a href="#prescriptions"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>Prescriptions</a>
+    <a href="SecuritySettingsPage.html"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>Security settings</a>
+  </nav>
+  <div class="side-foot">
+    <div class="who"><b id="sidebarName">Loading...</b><span>doctor</span></div>
+    <button id="logoutBtn" class="btn ghost-dark"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>Log out</button>
+  </div>
+</aside>
+
+<main id="top">
+<h1 class="page-t" id="welcomeHeading">Welcome, Doctor</h1>
+
+<!-- Stats Overview -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-i"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+    <div><div class="stat-v" id="statPatients">0</div><div class="stat-l">Authorized Patients</div></div>
+  </div>
+  <div class="stat">
+    <div class="stat-i"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div>
+    <div><div class="stat-v" id="statConsultations">0</div><div class="stat-l">Consultations Logged</div></div>
+  </div>
+</div>
+
+<!-- Patient UHID Lookup Card -->
+<section class="card" id="lookup">
+  <h2>Patient UHID Lookup</h2>
+  <p><small>Enter a patient's Unique Health ID (UHID) to request record access or view profile history.</small></p>
+  <form id="uhidLookupForm" style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+    <input type="text" id="searchUhid" placeholder="e.g. UHID20260515ABCD" required style="flex: 1; min-width: 240px;">
+    <button type="submit" class="btn" id="searchBtn">Request Access</button>
+  </form>
+  <div id="lookupResult" style="margin-top: 16px;"></div>
+</section>
+
+<!-- Authorized Patients / Recent Activity -->
+<section class="card" id="consultations">
+  <h2>Recent Patient Consultations</h2>
+  <div id="consultationsList">
+    <p style="padding: 10px 0; color: #666;">No recent consultations recorded.</p>
+  </div>
+</section>
+
+<p class="note">UHID Professional Portal · Authorized Medical Personnel Only.</p>
+</main>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+    const token = sessionStorage.getItem("uhid_token");
+    
+    if (!token) {
+        window.location.href = "LoginPage.html";
+        return;
+    }
+
+    // Set doctor name header safely from session storage or default
+    const docName = sessionStorage.getItem("uhid_name") || "Doctor";
+    if (document.getElementById("welcomeHeading")) {
+        document.getElementById("welcomeHeading").textContent = `Welcome, Dr. ${docName}`;
+    }
+    if (document.getElementById("sidebarName")) {
+        document.getElementById("sidebarName").textContent = `Dr. ${docName}`;
+    }
+
+    // Handle UHID Lookup Form & Backend Request Integration
+    const lookupForm = document.getElementById("uhidLookupForm");
+    if (lookupForm) {
+        lookupForm.addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const uhid = document.getElementById("searchUhid").value.trim();
+            const resultContainer = document.getElementById("lookupResult");
+            const searchBtn = document.getElementById("searchBtn");
+
+            if (!uhid) return;
+
+            searchBtn.disabled = true;
+            searchBtn.textContent = "Sending Request...";
+            resultContainer.innerHTML = `<p style="color: #666;">Checking database and submitting access request...</p>`;
+
+            try {
+                const response = await fetch("/api/doctors/search-patient", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ uhid: uhid })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    resultContainer.innerHTML = `
+                        <div class="row" style="background: #f8fafc; padding: 12px; border-radius: 8px; border-left: 4px solid var(--teal, #0d9488);">
+                            <b>UHID:</b> ${uhid}<br>
+                            <small style="color: var(--teal, #0d9488); font-weight: 600;">${data.message}</small>
+                        </div>
+                    `;
+                } else {
+                    resultContainer.innerHTML = `
+                        <div class="row" style="background: #fef2f2; padding: 12px; border-radius: 8px; border-left: 4px solid #dc2626;">
+                            <b>Error:</b> <span style="color: #dc2626;">${data.message || "Failed to request access"}</span>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error("Network or API error:", error);
+                resultContainer.innerHTML = `
+                    <div class="row" style="background: #fef2f2; padding: 12px; border-radius: 8px;">
+                        <span style="color: #dc2626;">Network error connecting to server. Please try again.</span>
+                    </div>
+                `;
+            } finally {
+                searchBtn.disabled = false;
+                searchBtn.textContent = "Search Patient";
+            }
+        });
+    }
+
+    // Handle Logout
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            sessionStorage.clear();
+            window.location.href = "LandingPage.html";
+        });
+    }
+});
+</script>
+</body>
+</html>
