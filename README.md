@@ -134,7 +134,7 @@ The web application provides the interface for accessing the Universal Health ID
 
 | Web Interface 1 | Web Interface 2 | Web Interface 3 |
 |---|---|---|
-| ![Web Interface 1](Images/IMG3.jpeg) | ![Web Interface 2](Images/IMG4.jpeg) | ![Web Interface 3](Images/IMG5.jpeg) |
+| ![Web Interface 1](Images/IMG3.png) | ![Web Interface 2](Images/IMG4.png) | ![Web Interface 3](Images/IMG5.png) |
 
 ## Limitations
 
