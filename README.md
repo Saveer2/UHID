@@ -118,6 +118,24 @@ Refer to the hardware wiring documentation and firmware configuration for the ex
 
 This prototype is intended for educational demonstration and should undergo security, privacy, and reliability testing before any real patient information is used.
 
+## 📸 Project Gallery
+
+### Hardware Implementation
+
+The hardware component integrates the ESP32 with RFID-based authentication and supporting input and audio modules.
+
+| Hardware Setup 1 | Hardware Setup 2 |
+|---|---|
+| ![Hardware Setup 1](Images/IMG1.jpeg) | ![Hardware Setup 2](Images/IMG2.jpeg) |
+
+### Web Application
+
+The web application provides the interface for accessing the Universal Health ID (UHID) system and managing patient-related information.
+
+| Web Interface 1 | Web Interface 2 | Web Interface 3 |
+|---|---|---|
+| ![Web Interface 1](Images/IMG3.jpeg) | ![Web Interface 2](Images/IMG4.jpeg) | ![Web Interface 3](Images/IMG5.jpeg) |
+
 ## Limitations
 
 - The project is a prototype and is not certified for clinical use.
